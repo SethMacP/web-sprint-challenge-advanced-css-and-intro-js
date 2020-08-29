@@ -254,17 +254,12 @@ function get20s (array){
       let splitCheck = array[i].years.split(' - ');
       let split1 = Number(splitCheck[0]);
       let split2 = Number(splitCheck[1]);
-      console.log(split1);
-      console.log(split2);
-      
       if (split1 > 1899 && split2 < 2000){
-        return array[i].name;
-        
+        console.log( array[i].name);
       }
-      console.log(splitCheck);
   }
 }
-console.log(get20s(artists));
+get20s(artists);
 
 //Copy of code above 
 // function get20s (array){
