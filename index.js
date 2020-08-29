@@ -285,11 +285,13 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
+function addArtist(newName, newYears, newGenre, newNationality, newBio){
+  let newID = artists.length+1;
+  artists.push({newID,newName,newYears,newGenre,newNationality, newBio});
+  return artists;
   }
+addArtist("Seth MacPherson", "1991 - 2091", "Web Design", "Scotish", "I'm upset I wasn't taught task 4.I'm upset I wasn't taught task 4.I'm upset I wasn't taught task 4." );
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -298,14 +300,17 @@ function addArtist(/* Code here */){
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
+let factoryArtists = [];
 
-function lotsOfArt(/* Code here */){
-
-  /* Code here */
-
+function lotsOfArt(array){
+  for (let i = 0; i<array.length; i++){
+    if (array[i].paintings > 100)
+      factoryArtists.push(array[i].name)
+  }
+return factoryArtists;
 }
-
-
+lotsOfArt(artists);
+console.log(factoryArtists);
 
 // 🎨🎨 STRETCH 🎨🎨//
 
