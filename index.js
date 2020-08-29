@@ -251,10 +251,14 @@ function getArtistByIndex(array, index) {
 
 function get20s (array){
   for (let i = 0 ; i < array.length ; i++){
-      let splitCheck = array[i].years.split(' - ', 20)
-      console.log(splitCheck[0])
-      if (splitCheck[0] > 1899 && splitCheck[0] < 2000){
-        return array[i].name
+      let splitCheck = array[i].years.split(' - ');
+      let split1 = Number(splitCheck[0]);
+      let split2 = Number(splitCheck[1]);
+      console.log(split1);
+      console.log(split2);
+      
+      if (split1 > 1899 && split2 < 2000){
+        return array[i].name;
         
       }
       console.log(splitCheck);
@@ -262,8 +266,20 @@ function get20s (array){
 }
 console.log(get20s(artists));
 
-
-
+//Copy of code above 
+// function get20s (array){
+//   for (let i = 0 ; i < array.length ; i++){
+//       let splitCheck = array[i].years.split(' - ');
+//       console.log(splitCheck);
+      
+//       if (splitCheck[0] > 1899 && splitCheck[0] < 2000){
+//         return array[i].name;
+        
+//       }
+//       console.log(splitCheck);
+//   }
+// }
+// console.log(get20s(artists));
 
 
 
